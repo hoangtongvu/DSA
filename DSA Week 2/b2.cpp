@@ -152,25 +152,33 @@ int main()
 
     //PrintOutArray(list);
 
-    int n;
-    cin >> n;
+    int nOperation;
+    cin >> nOperation;
     LinkedList* linkList = new LinkedList();
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < nOperation; i++)
     {
-        int k;
-        cin >> k;
-        linkList->Insert(i, k);
+        string description;
+        int pos;
+        cin >> description;
+        cin >> pos;
+
+        if (description == "insert")
+        {
+            int value;
+            cin >> value;
+            linkList->Insert(pos, value);
+        }
+        else if (description == "delete")
+        {
+            linkList->Delete(pos);
+        }
     }
 
-
-
-
-    linkList->Delete(1);
 
     linkList->PrintOut();
 
     delete linkList;
-	return 0;
+    return 0;
 }
 
 
