@@ -22,7 +22,7 @@ public:
     Queue();
     ~Queue();
     void PrintOut();
-    void Enqueue(Node* &element);
+    void Enqueue(Node*& element);
     Node* Dequeue();
 
 private:
@@ -53,7 +53,7 @@ void Queue::PrintOut()
     cout << endl;
 }
 
-void Queue::Enqueue(Node* &newNode)
+void Queue::Enqueue(Node*& newNode)
 {
     if (newNode == NULL) return;
     if (this->tail == NULL)
@@ -80,7 +80,6 @@ Node* Queue::Dequeue()
 class StackBy2Queues
 {
 public:
-    Node* top;
     Queue* queue1;
     Queue* queue2;
     StackBy2Queues();
@@ -88,7 +87,7 @@ public:
     void PrintOut();
     void Push(int value);
     void Pop();
-    void SwapQueue(Queue* &queue1, Queue* &queue2);
+    void SwapQueue(Queue*& queue1, Queue*& queue2);
 
 private:
 
@@ -96,7 +95,6 @@ private:
 
 StackBy2Queues::StackBy2Queues()
 {
-    this->top = NULL;
     this->queue1 = new Queue();
     this->queue2 = new Queue();
 }
@@ -129,7 +127,7 @@ void StackBy2Queues::Push(int value)
         p = this->queue1->Dequeue();
         this->queue2->Enqueue(p);
     } while (p != NULL);
-    
+
 
     //swap q1 and q2
     this->SwapQueue(this->queue1, this->queue2);
@@ -146,7 +144,7 @@ void StackBy2Queues::Pop()
     delete p;
 }
 
-void StackBy2Queues::SwapQueue(Queue* &q1, Queue* &q2)
+void StackBy2Queues::SwapQueue(Queue*& q1, Queue*& q2)
 {
     Queue* queueTemp = q1;
     q1 = q2;
@@ -186,10 +184,10 @@ void PrintOutArray(vector<int> arr)
 
 int main()
 {
-    
+
     StackBy2Queues* stack = new StackBy2Queues();
 
-    /*int nOperation;
+    int nOperation;
     cin >> nOperation;
     for (int i = 0; i < nOperation; i++)
     {
@@ -206,15 +204,15 @@ int main()
         {
             stack->Pop();
         }
-    }*/
+    }
 
-    stack->Push(2);
+    /*stack->Push(2);
     stack->Push(3);
     stack->Push(4);
     stack->Push(4);
     stack->Push(4);
     stack->Pop();
-    stack->Pop();
+    stack->Pop();*/
 
     stack->PrintOut();
 
