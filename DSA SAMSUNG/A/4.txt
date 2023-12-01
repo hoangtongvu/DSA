@@ -1,0 +1,8 @@
+4. Chứng minh đồ thị là bipartile khi và chỉ khi nó không có chu trình lẻ.
++ Giả sử đồ thị G có chu trình lẻ. Ta tô màu đỉnh, bắt đầu là màu đỏ, các đỉnh kề với nó là xanh,
+các đỉnh kề với các đỉnh xanh là đỏ, các đỉnh kề với các đỉnh đỏ là xanh, làm tương tự với các đỉnh còn lại.
+Nếu chu trình là lẻ thì đỉnh kết thúc của chu trình là đỉnh bắt đầu phải có màu xanh, nhưng đỉnh
+kết thúc của chu trình là màu đỏ -> G không phải là đồ thị bipartile.
++ Giả sử G không chứa chu trình lẻ. Ta tô màu đỉnh, bắt đầu với màu đỏ, quy luật tô màu tương tự phần trên.
+Nếu G không chứa chu trình lẻ thì đỉnh kết thúc của chu trình có màu khác đỉnh bắt đầu -> G
+là đồ thị bipartile.
